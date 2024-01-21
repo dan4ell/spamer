@@ -45,8 +45,7 @@ async def send_message_to_contact(client, contact, sem, channel_text=message_tex
             if channel_media is not None:
                 await client.send_file(contact.user_id, channel_media)
             else:
-                pass
-            await client.send_message(contact.user_id, channel_text)
+                await client.send_message(contact.user_id, channel_text)
             send_messages[client] += 1
             if sema == 1:
                 print(f'{me.phone} отправлено сообщений: {send_messages[client]}')
